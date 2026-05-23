@@ -6,7 +6,7 @@ This project extracts subtitles/transcripts from a YouTube video and generates a
 
 ---
 
-# ✨ Features
+## ✨ Features
 
 - Extract YouTube video transcripts
 - Supports multiple languages (`en`, `ar`, etc.)
@@ -17,7 +17,7 @@ This project extracts subtitles/transcripts from a YouTube video and generates a
 
 ---
 
-# 🧠 Technologies Used
+## 🧠 Technologies Used
 
 - Python
 - Transformers (Hugging Face)
@@ -26,7 +26,7 @@ This project extracts subtitles/transcripts from a YouTube video and generates a
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```bash
 youtube-video-summarizer/
@@ -34,35 +34,72 @@ youtube-video-summarizer/
 ├── app.py
 ├── requirements.txt
 └── README.md
-⚙️ Installation
-1. Clone the Repository
+```
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/YOUR_USERNAME/youtube-video-summarizer.git
 cd youtube-video-summarizer
-2. Create Virtual Environment (Recommended)
-Windows
+```
+
+### 2. Create Virtual Environment (Recommended)
+
+**Windows:**
+```bash
 python -m venv venv
 venv\Scripts\activate
-Linux / macOS
+```
+
+**Linux / macOS:**
+```bash
 python3 -m venv venv
 source venv/bin/activate
-3. Install Dependencies
+```
+
+### 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
-📦 requirements.txt
+```
+
+---
+
+## 📦 requirements.txt
+
+```
 youtube-transcript-api
 transformers
 torch
 sentencepiece
-🚀 Usage
+```
+
+---
+
+## 🚀 Usage
 
 Run the application:
 
+```bash
 python app.py
+```
 
 Then paste a YouTube URL:
 
+```
 Enter YouTube URL:
 https://www.youtube.com/watch?v=xxxxxxxxxxx
-🧪 Example Output
+```
+
+---
+
+## 🧪 Example Output
+
+```
 Fetching transcript...
 Chunking transcript...
 Generating summary...
@@ -74,108 +111,127 @@ SUMMARY
 This video explains how transformers work,
 how attention mechanisms function,
 and how modern LLMs process language...
-🧩 Supported Languages
+```
+
+---
+
+## 🧩 Supported Languages
 
 The application supports videos with:
 
-English subtitles
-Arabic subtitles
-Auto-generated captions
+- ✅ English subtitles
+- ✅ Arabic subtitles
+- ✅ Auto-generated captions
 
 Example fallback:
 
+```python
 languages=['en', 'ar']
-🛠️ Main Components
-Transcript Extraction
+```
 
-Uses:
+---
 
-YouTubeTranscriptApi
+## 🛠️ Main Components
 
-to retrieve subtitles from YouTube videos.
+### Transcript Extraction
 
-Text Chunking
+Uses `YouTubeTranscriptApi` to retrieve subtitles from YouTube videos.
+
+### Text Chunking
 
 Long transcripts are split into smaller chunks to fit Transformer token limits.
 
-AI Summarization
+### AI Summarization
 
-Uses:
+Uses [`facebook/bart-large-cnn`](https://huggingface.co/facebook/bart-large-cnn) for abstractive summarization.
 
-facebook/bart-large-cnn
+---
 
-for abstractive summarization.
+## 📜 Example Code
 
-📜 Example Code
-Load Model
+**Load Model:**
+```python
 summarizer = pipeline(
-    "summarization",
+    "text-generation",
     model="facebook/bart-large-cnn"
 )
-Generate Summary
+```
+
+**Generate Summary:**
+```python
 result = summarizer(
     chunk,
     max_length=120,
     min_length=30,
     do_sample=False
 )
-🧠 What You Learn From This Project
+```
+
+---
+
+## 🧠 What You Learn From This Project
 
 This project helps you learn:
 
-NLP pipelines
-Hugging Face Transformers
-Token chunking
-Transcript preprocessing
-Prompt engineering basics
-LLM application architecture
-🚀 Future Improvements
-Whisper speech-to-text fallback
-FastAPI backend
-React frontend
-RAG (Retrieval-Augmented Generation)
-Ask questions about videos
-Vector database integration
-Multi-video summarization
-Export summaries to PDF
-🌐 Deployment Ideas
+- ✅ NLP pipelines
+- ✅ Hugging Face Transformers
+- ✅ Token chunking
+- ✅ Transcript preprocessing
+- ✅ Prompt engineering basics
+- ✅ LLM application architecture
+
+---
+
+## 🚀 Future Improvements
+
+- ⬜ Whisper speech-to-text fallback
+- ⬜ FastAPI backend
+- ⬜ React frontend
+- ⬜ RAG (Retrieval-Augmented Generation)
+- ⬜ Ask questions about videos
+- ⬜ Vector database integration
+- ⬜ Multi-video summarization
+- ⬜ Export summaries to PDF
+
+---
+
+## 🌐 Deployment Ideas
 
 You can deploy this project for free using:
 
-Render
-Railway
-Hugging Face Spaces
-Vercel (frontend)
-📚 Useful Resources
-Hugging Face Transformers
-YouTube Transcript API
-PyTorch
-OpenAI Whisper
-🤝 Contributing
+- [Render](https://render.com)
+- [Railway](https://railway.app)
+- [Hugging Face Spaces](https://huggingface.co/spaces)
+- [Vercel](https://vercel.com) (frontend)
+
+---
+
+## 📚 Useful Resources
+
+- [Hugging Face Transformers Documentation](https://huggingface.co/docs/transformers)
+- [YouTube Transcript API](https://pypi.org/project/youtube-transcript-api/)
+- [PyTorch](https://pytorch.org/docs/)
+- [OpenAI Whisper](https://github.com/openai/whisper)
+
+---
+
+## 🤝 Contributing
 
 Pull requests are welcome.
-
 If you'd like to improve the project, feel free to fork the repository and submit a PR.
 
-📄 License
+---
+
+## 📄 License
 
 MIT License
 
-👨‍💻 Author
+---
 
-BOUTMEDJET Abd elmoudjib
+## 👨‍💻 Author
 
+**BOUTMEDJET Abd elmoudjib**
 Software Engineering Student | AI & Backend Developer
 
-GitHub:
-https://github.com/moonmido
-
-LinkedIn:
-https://linkedin.com/in/abdelmoudjib-boutmedjet-0375a0383/
-
-
-Useful official docs:
-
-- :contentReference[oaicite:0]{index=0}
-- :contentReference[oaicite:1]{index=1}
-- :contentReference[oaicite:2]{index=2}
+- GitHub: [moonmido](https://github.com/moonmido)
+- LinkedIn: [abdelmoudjib-boutmedjet](https://linkedin.com/in/abdelmoudjib-boutmedjet-0375a0383/)
