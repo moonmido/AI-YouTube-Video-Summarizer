@@ -195,16 +195,7 @@ This project helps you learn:
 
 ---
 
-## 🌐 Deployment Ideas
 
-You can deploy this project for free using:
-
-- [Render](https://render.com)
-- [Railway](https://railway.app)
-- [Hugging Face Spaces](https://huggingface.co/spaces)
-- [Vercel](https://vercel.com) (frontend)
-
----
 
 ## 📚 Useful Resources
 
